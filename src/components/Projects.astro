@@ -41,7 +41,13 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                       }`}
                       style={project.image ? `background-image: url('${project.image}'); background-size: cover; background-position: ${project.bgPosition ?? 'center 60%'}; border-color: rgba(255,255,255,0.04);` : 'background-color: var(--tw-bg-opacity, #f8fafc); border-color: #e5e7eb;'}
                     >
-                      {/* overlay removed — show image as-is */}
+                      {/* overlay for readability: use project.overlay (0.0-1.0) or default 0.55 */}
+                      {project.image && (
+                        <div
+                          class="absolute inset-0 pointer-events-none"
+                          style={`background: rgba(0,0,0,${project.overlay ?? 0.55})`}
+                        />
+                      )}
 
                       {project.link && (
                         <div class="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center bg-gray-900 rounded-full text-white transition-all duration-300 group-hover:bg-gray-700">

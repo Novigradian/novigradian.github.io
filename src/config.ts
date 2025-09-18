@@ -1,7 +1,8 @@
 export const siteConfig = {
   name: "Lucas Wang",
-  title: "Game Developer",
+  title: "",
   description: "Portfolio website of Lucas Wang",
+  heroImage: "/images/hero.jpg",
   accentColor: "#c44536",
   social: {
     email: "lucaswan@usc.edu",
@@ -15,12 +16,13 @@ export const siteConfig = {
   projects: [
     {
       name: "Vendetta",
-      image: "/images/vendetta.jpg",
+      image: "/images/vendetta2.jpg",
       bgPosition: "center 100%",
       description:
         "Sharpen your blade and prepare for a duel to the death in this punishing side-view fighter inspired by Renaissance fencing.",
       link: "https://novigradian7.itch.io/vendetta",
       skills: ["Unity", "2D", "Itch.io"],
+      overlay: 0.65,
     },
     {
       name: "Chrome Extension Mastery: Build Full-Stack Extensions with React & Node.js",
@@ -30,6 +32,7 @@ export const siteConfig = {
         "Master the art of building production-ready, full-stack Chrome Extensions using modern web technologies and best practices",
       link: "https://fullstackextensions.com/?ref=devportfolio",
       skills: ["React", "Node.js", "AWS"],
+      overlay: 0.55,
     },
     {
       name: "ExtensionKit",
@@ -39,6 +42,7 @@ export const siteConfig = {
         "Kit to jump-start your Chrome extension projects with a variety of battle-tested starter templates & examples",
       link: "https://extensionkit.io/?ref=devportfolio",
       skills: ["React", "Node.js", "AWS"],
+      overlay: 0.55,
     },
   ],
   experience: [
