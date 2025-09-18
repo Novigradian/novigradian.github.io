@@ -1,27 +1,31 @@
 export const siteConfig = {
   name: "Lucas Wang",
   title: "Game Developer",
-  description: "Portfolio website of Ryan Fitzgerald",
-  accentColor: "#1d4ed8",
+  description: "Portfolio website of Lucas Wang",
+  accentColor: "#c44536",
   social: {
     email: "lucaswan@usc.edu",
     linkedin: "https://www.linkedin.com/in/lucas-wang-546095384",
-    twitter: "https://x.com/rfitzio",
+    twitter: "https://www.instagram.com/nxvigradian/",
     github: "https://github.com/novigradian",
   },
   aboutMe:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem quos asperiores nihil consequatur tempore cupiditate architecto natus commodi corrupti quas quasi facere est, dignissimos odit nam veniam sapiente ut, vitae eligendi ipsum dolor, nostrum ullam impedit! Corrupti ratione mollitia temporibus necessitatibus, consectetur reiciendis recusandae id, dolorum quaerat, vero pariatur. Ratione!",
-  skills: ["Javascript", "React", "Node.js", "Python", "AWS", "Docker"],
+    "I'm an undergraduate student at the University of Southern California with a passion for game development and software engineering. I have 4+ years of experience with Unity and have published various projects both with a team and independently. I'm currently an engineer for Overdawn, a bullet-hell shooter releasing later this year (wishlist on Steam!) <br> Besides game dev, I'm also part of Taking the Sidequests, an urban exploration channel. In my spare time I enjoy cooking and creative writing. Thanks for stopping by! :)",
+  skills: ["C#", "C++", "Java", "Python", "Unity", "HTML", "CSS", "SQL"],
   projects: [
     {
-      name: "AI Dev Roundup Newsletter",
+      name: "Vendetta",
+      image: "/images/vendetta.jpg",
+      bgPosition: "center 100%",
       description:
-        "One concise email. Five minutes. Every Tuesday. Essential AI news & trends, production-ready libraries, powerful AI tools, and real-world code examples",
-      link: "https://aidevroundup.com/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
+        "Sharpen your blade and prepare for a duel to the death in this punishing side-view fighter inspired by Renaissance fencing.",
+      link: "https://novigradian7.itch.io/vendetta",
+      skills: ["Unity", "2D", "Itch.io"],
     },
     {
       name: "Chrome Extension Mastery: Build Full-Stack Extensions with React & Node.js",
+      image: "",
+      bgPosition: "center 60%",
       description:
         "Master the art of building production-ready, full-stack Chrome Extensions using modern web technologies and best practices",
       link: "https://fullstackextensions.com/?ref=devportfolio",
@@ -29,6 +33,8 @@ export const siteConfig = {
     },
     {
       name: "ExtensionKit",
+      image: "",
+      bgPosition: "center 60%",
       description:
         "Kit to jump-start your Chrome extension projects with a variety of battle-tested starter templates & examples",
       link: "https://extensionkit.io/?ref=devportfolio",
@@ -69,23 +75,32 @@ export const siteConfig = {
   ],
   education: [
     {
-      school: "University Name",
-      degree: "Bachelor of Science in Computer Science",
-      dateRange: "2014 - 2018",
+      school: "University of Southern California",
+      degree: "B.S. in Computer Science (Games)",
+      dateRange: "2025-2029",
       achievements: [
-        "Graduated Magna Cum Laude with 3.8 GPA",
-        "Dean's List all semesters",
-        "President of Computer Science Club",
+        "Programmer at Open Alpha (Game Dev Club) 2025-Present",
       ],
     },
     {
-      school: "Online Platform",
-      degree: "Full Stack Development Certificate",
-      dateRange: "2019",
+      school: "Carnegie Mellon University",
+      degree: "National High School Game Academy",
+      dateRange: "2023",
       achievements: [
-        "Completed 500+ hours of coursework",
-        "Built 10+ portfolio projects",
-        "Specialized in React and Node.js",
+        "Intensive 6-week summer program",
+        "Worked within a team to develop 2 digital games",
+        "Prototyped various tabletop games",
+        "Learned basics of 3D modeling and texturing"
+      ],
+    },
+    {
+      school: "Shanghai High School International Division",
+      degree: "International Baccalaureate Diploma Programme (IBDP)",
+      dateRange: "2021-2025",
+      achievements: [
+        "Total score: 42/45",
+        "IB Subjects: HL Math Analysis & Approaches, HL Computer Science, HL English Literature, SL Physics, SL Chinese Language & Literature, SL Psychology",
+        "5 on AP Microeconomics, AP English Language and Composition, AP US History",
       ],
     },
   ],
