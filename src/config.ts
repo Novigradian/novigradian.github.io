@@ -1,8 +1,11 @@
 export const siteConfig = {
-  name: "Lucas Wang",
+  name: "LucaS WanG",
   title: "",
   description: "Portfolio website of Lucas Wang",
-  heroImage: "/images/hero.jpg",
+  heroImage: "/images/hero_red4.png",
+  heroBgColor: "#000e14",
+  heroGradientColor: "#00132d",
+  textColor: "#ffffff",
   accentColor: "#c44536",
   social: {
     email: "lucaswan@usc.edu",
