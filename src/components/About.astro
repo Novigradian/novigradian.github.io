@@ -1,39 +1,69 @@
 ---
-import { siteConfig } from "../config";
 ---
 
-<section id="about" class="p-8 sm:p-12 md:p-16 lg:p-24">
-  <div>
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-      <div class="lg:col-span-4">
-        <h2
-          class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900"
-        >
-          About Me
-        </h2>
-        <div
-          class="w-[75px] h-[5px] mt-2 rounded-full"
-          style={`background-color: ${siteConfig.accentColor}`}
-        >
-        </div>
+<section id="about" class="py-24 bg-slate-900/30 relative">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="mb-12 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="h-px w-8 bg-slate-700"></span>
+        <span class="text-slate-500 text-sm font-medium tracking-wider uppercase" style="font-family: var(--font-display);">About</span>
       </div>
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">
+        <span class="text-slate-200">Who I Am</span>
+      </h2>
+    </div>
 
-      <div class="lg:col-span-8 space-y-8">
-        <p class="text-sm sm:text-base md:text-lg leading-relaxed text-gray-600">
-          I'm an undergraduate student at the University of Southern California with a passion for game development and software engineering. I have 4+ years of experience with Unity and have published various projects both with a team and independently. I'm currently an engineer for Overdawn, a bullet-hell shooter releasing later this year (wishlist on Steam!) <br><br>  Besides game dev, I'm also part of Taking the Sidequests, an urban exploration channel. In my spare time, I enjoy cooking and creative writing.<br> <br>  Thanks for stopping by! 🦈
-        </p>
+    <!-- Content -->
+    <div class="space-y-6 text-slate-300 leading-relaxed text-lg animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000">
+      <p>
+        I'm a university student pursuing game development, driven by a passion for creating 
+        immersive interactive experiences. My journey began with a simple curiosity about 
+        how games work, and has evolved into a dedicated pursuit of mastering the craft.
+      </p>
+      
+      <p>
+        Through coursework, personal projects, and game jams, I've developed skills in 
+        programming, game design, and problem-solving. I enjoy the challenge of bringing 
+        creative ideas to life through code and seeing players engage with the worlds I create.
+      </p>
 
-        <div class="pt-4">
-          <div class="flex flex-wrap gap-3">
-            {
-              siteConfig.skills.map((skill) => (
-                <span class="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 text-gray-800 rounded-full text-sm sm:text-base md:text-lg font-medium hover:bg-gray-200 transition-colors duration-200">
-                  {skill}
-                </span>
-              ))
-            }
-          </div>
-        </div>
+      <p>
+        Beyond academics, I'm actively involved in game development communities, participating 
+        in game jams, collaborating on projects, and constantly learning new techniques and 
+        technologies in this ever-evolving field.
+      </p>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000">
+      <div class="text-center">
+        <div class="text-4xl font-bold text-slate-200 mb-2">5+</div>
+        <div class="text-sm text-slate-400">Games Released</div>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl font-bold text-slate-200 mb-2">10+</div>
+        <div class="text-sm text-slate-400">Game Jams</div>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl font-bold text-slate-200 mb-2">3+</div>
+        <div class="text-sm text-slate-400">Years Learning</div>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl font-bold text-slate-200 mb-2">∞</div>
+        <div class="text-sm text-slate-400">Ideas</div>
+      </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="mt-16 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000">
+      <h3 class="text-xl font-semibold text-slate-200 mb-6">Tools & Technologies</h3>
+      <div class="flex flex-wrap gap-3">
+        {['Unity', 'C#', 'Unreal Engine', 'C++', 'Godot', 'Blender', 'Git', 'Photoshop'].map((tech) => (
+          <span class="px-4 py-2 bg-slate-800/50 border border-slate-700 text-slate-300 rounded-md text-sm font-medium hover:border-slate-600 transition-colors">
+            {tech}
+          </span>
+        ))}
       </div>
     </div>
   </div>

@@ -1,193 +1,217 @@
 ---
-import { siteConfig } from "../config";
 ---
 
-<div
-  id="hero"
-  class="relative isolate overflow-hidden py-24 md:h-screen"
-  style={`--accent-color: ${siteConfig.accentColor}; background-color: ${siteConfig.heroBgColor}`}
->
-  <!-- Gradient overlay -->
-  <div
-    class="absolute inset-0 -z-10"
-    style={`background: radial-gradient(ellipse 800px 1200px at 0% 0%, ${siteConfig.accentColor}40 0%, ${siteConfig.accentColor}25 20%, ${siteConfig.accentColor}10 40%, ${siteConfig.heroGradientColor}40 70%, ${siteConfig.heroGradientColor}80 90%, ${siteConfig.heroBgColor} 100%)`}
-  >
-  </div>
-  <div class="h-full mx-auto p-8 sm:p-12 md:p-24 flex items-center">
-    <div class="w-full md:w-1/2">
-      <h2
-        class="text-pretty text-xl sm:text-2xl md:text-5xl font-bold tracking-tight text-gray-700 animate-fade-in"
-      >
-        <!-- Hello! 🦈-->
-      </h2>
-      <h1
-        class="font-header mt-6 sm:mt-8 md:mt-10 text-pretty text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight text-gray-800 animate-fade-in animation-delay-200"
-      >
-        <!-- I'm--> <span style={{ color: "#9e2a2b" }}
-          >{siteConfig.name}</span
-        >
-      </h1>
-      <p
-        class="mt-4 sm:mt-6 md:mt-8 text-pretty text-base sm:text-lg md:text-xl/8 font-medium text-gray-600 animate-fade-in animation-delay-400"
-      >
-        {siteConfig.title}
+<section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+  <!-- Video Background -->
+  <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
+    <source src="/bg trim.mp4" type="video/mp4">
+  </video>
+  
+  <!-- Dark overlay for readability -->
+  <div class="absolute inset-0 bg-black/40"></div>
+  
+  <!-- Minimal accent glow -->
+  <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[120px]"></div>
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center space-y-4 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000">
+      <!-- Minimalist title -->
+      <div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight flex items-center justify-center gap-4 sm:gap-6">
+          <span class="text-slate-200 text-8xl" style="font-family: var(--font-display);">LucAs </span>
+          <span class="text-8xl" style="font-family: var(--font-display); color: var(--color-name-accent);">WanG</span>
+        </h1>
+      </div>
+
+      <!-- Clean description -->
+      <p class="text-slate-400 text-lg max-w-xl mx-auto leading-relaxed">
+        Game developer studying at USC.
       </p>
-    </div>
-    <div class="hidden md:flex md:justify-center md:items-center md:w-1/2">
-      <div class="max-h-[420px] w-full md:w-10/12 lg:w-8/12 overflow-hidden rounded-xl shadow-lg">
-        <img
-          src={siteConfig.heroImage ?? '/images/hero.png'}
-          alt="Hero image"
-          class="w-full h-full object-cover block"
-        />
+
+      <!-- Skills list -->
+      <div class="flex flex-wrap justify-center gap-2 pt-1" id="skills-container">
+        <span class="skill-badge px-3 py-1.5 bg-slate-800/50 border border-slate-700 text-slate-300 rounded-md text-sm cursor-pointer">Unity</span>
+        <span class="skill-badge px-3 py-1.5 bg-slate-800/50 border border-slate-700 text-slate-300 rounded-md text-sm cursor-pointer">C#</span>
+        <span class="skill-badge px-3 py-1.5 bg-slate-800/50 border border-slate-700 text-slate-300 rounded-md text-sm cursor-pointer">Unreal Engine</span>
+        <span class="skill-badge px-3 py-1.5 bg-slate-800/50 border border-slate-700 text-slate-300 rounded-md text-sm cursor-pointer">C++</span>
+        <span class="skill-badge px-3 py-1.5 bg-slate-800/50 border border-slate-700 text-slate-300 rounded-md text-sm cursor-pointer">Game Design</span>
+        <span class="skill-badge px-3 py-1.5 bg-slate-800/50 border border-slate-700 text-slate-300 rounded-md text-sm cursor-pointer">Blender</span>
+      </div>
+
+      <!-- Minimal CTA -->
+      <div class="flex flex-col sm:flex-row gap-3 justify-center items-center pt-2">
+        <a 
+          href="#games" 
+          class="group px-6 py-2.5 bg-white text-slate-950 rounded-md font-medium hover:bg-slate-200 transition-all duration-300 flex items-center gap-2"
+        >
+          View Games
+          <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a 
+          href="#contact" 
+          class="contact-btn relative px-6 py-2.5 text-slate-300 rounded-md font-medium border border-slate-700 overflow-hidden transition-all duration-300"
+        >
+          <span class="relative z-10">Contact</span>
+        </a>
+      </div>
+
+      <!-- Minimal social links -->
+      <div class="flex justify-center gap-6 pt-4">
+        <a href="https://github.com/Novigradian" target="_blank" rel="noopener" class="text-slate-500 hover:text-slate-200 transition-colors duration-300">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/lucas-wang-546095384/" target="_blank" rel="noopener" class="text-slate-500 hover:text-slate-200 transition-colors duration-300">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+        <a href="https://novigradian7.itch.io/" target="_blank" rel="noopener" class="text-slate-500 hover:text-slate-200 transition-colors duration-300" title="itch.io">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M3.13 1.338C2.08 1.96.02 4.328 0 4.95v1.03c0 1.303 1.22 2.45 2.325 2.45 1.33 0 2.436-1.102 2.436-2.41 0 1.308 1.07 2.41 2.4 2.41 1.328 0 2.362-1.102 2.362-2.41 0 1.308 1.137 2.41 2.466 2.41h.024c1.33 0 2.466-1.102 2.466-2.41 0 1.308 1.034 2.41 2.363 2.41 1.33 0 2.4-1.102 2.4-2.41 0 1.308 1.106 2.41 2.435 2.41C22.78 8.43 24 7.283 24 5.98V4.95c-.02-.62-2.082-2.99-3.13-3.612-3.253-.114-5.508-.134-8.87-.133-3.362 0-7.945.053-8.87.133zm6.376 6.477a2.74 2.74 0 0 1 2.74 2.74v6.525c0 .287.157.55.387.688.23.138.51.126.73-.03l2.35-1.645c.23-.16.53-.167.78-.02l2.445 1.665c.22.156.5.168.73.03.23-.138.387-.4.387-.688v-6.525a2.74 2.74 0 0 1 2.74-2.74h.02a2.74 2.74 0 0 1 2.74 2.74v6.525c0 1.01-.55 1.94-1.41 2.42-.86.48-1.92.45-2.76-.08l-2.44-1.665-2.35 1.645c-.84.53-1.9.56-2.76.08-.86-.48-1.41-1.41-1.41-2.42v-6.525a2.74 2.74 0 0 1 2.74-2.74z"/>
+          </svg>
+        </a>
       </div>
     </div>
   </div>
-  <div
-    class="absolute bottom-0 left-0 right-0 p-8 sm:p-12 md:p-24 flex gap-x-4 sm:gap-x-6 md:gap-x-8 text-gray-700 animate-fade-in animation-delay-600"
-  >
-    {
-      siteConfig.social?.email && (
-        <a
-          href={`mailto:${siteConfig.social.email}`}
-          aria-label="Email"
-          class="transition-colors duration-300 hover:text-[var(--accent-color)]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
-            <path d="M3 7l9 6l9 -6" />
-          </svg>
-        </a>
-      )
-    }
-    {
-      siteConfig.social?.linkedin && (
-        <a
-          href={siteConfig.social.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-          class="transition-colors duration-300 hover:text-[var(--accent-color)]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8"
-          >
-            <>
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M8 11v5" />
-              <path d="M8 8v.01" />
-              <path d="M12 16v-5" />
-              <path d="M16 16v-3a2 2 0 1 0 -4 0" />
-              <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
-            </>
-          </svg>
-        </a>
-      )
-    }
-    {
-      siteConfig.social?.twitter && (
-        <a
-          href={siteConfig.social.twitter}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Twitter"
-          class="transition-colors duration-300 hover:text-[var(--accent-color)]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-7 w-7 sm:h-7 sm:w-7 md:h-8 md:w-8"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg>
-        </a>
-      )
-    }
-    {
-      siteConfig.social?.github && (
-        <a
-          href={siteConfig.social.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub"
-          class="transition-colors duration-300 hover:text-[var(--accent-color)]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8"
-          >
-            <>
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
-            </>
-          </svg>
-        </a>
-      )
-    }
-  </div>
-</div>
+</section>
 
 <style>
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.5; }
+  }
+  
+  .delay-1000 {
+    animation-delay: 1s;
   }
 
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
+  .animate-on-scroll.in-view {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  .skill-badge {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+
+  .skill-badge::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
     opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
   }
 
-  .animation-delay-200 {
-    animation-delay: 0.2s;
+  .skill-badge:hover {
+    background: rgba(30, 41, 59, 0.8);
+    border-color: var(--color-primary);
+    color: white;
+    box-shadow: 0 10px 25px -5px rgba(168, 85, 247, 0.4);
   }
 
-  .animation-delay-400 {
-    animation-delay: 0.4s;
+  .skill-badge:hover::before {
+    opacity: 0.1;
   }
 
-  .animation-delay-600 {
-    animation-delay: 0.6s;
+  /* Contact button effects */
+  .contact-btn {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .contact-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, 
+      #581c87, 
+      #854d0e);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+    border-radius: inherit;
+  }
+
+  .contact-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.8), transparent 70%);
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.6s ease;
+    z-index: 1;
+    border-radius: inherit;
+  }
+
+  .contact-btn:hover {
+    border-color: rgba(168, 85, 247, 0.3);
+    color: white;
+    box-shadow: 
+      0 0 15px rgba(168, 85, 247, 0.2),
+      inset 0 0 20px rgba(168, 85, 247, 0.05);
+  }
+
+  .contact-btn:hover::before {
+    transform: scaleX(1);
+  }
+
+  .contact-btn:hover::after {
+    opacity: 0.2;
+    transform: scale(1);
+    animation: pulse-glow 2s infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { 
+      opacity: 0.2;
+      transform: scale(1);
+    }
+    50% { 
+      opacity: 0.4;
+      transform: scale(1.1);
+    }
   }
 </style>
+
+<script>
+  // Responsive hover effects for skill badges based on cursor position
+  document.addEventListener('DOMContentLoaded', () => {
+    const skillBadges = document.querySelectorAll('.skill-badge');
+    
+    skillBadges.forEach(badge => {
+      badge.addEventListener('mousemove', (e: Event) => {
+        const mouseEvent = e as MouseEvent;
+        const element = badge as HTMLElement;
+        const rect = element.getBoundingClientRect();
+        const x = mouseEvent.clientX - rect.left; // Mouse X relative to badge
+        const y = mouseEvent.clientY - rect.top;  // Mouse Y relative to badge
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        // Calculate rotation based on cursor position (max ±10 degrees)
+        const rotateX = ((y - centerY) / centerY) * -10;
+        const rotateY = ((x - centerX) / centerX) * 10;
+        
+        // Apply 3D transform
+        element.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+      
+      badge.addEventListener('mouseleave', () => {
+        // Reset transform on mouse leave
+        (badge as HTMLElement).style.transform = '';
+      });
+    });
+  });
+</script>

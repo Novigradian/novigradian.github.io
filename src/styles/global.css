@@ -1,18 +1,111 @@
 @import "tailwindcss";
 
-body {
-  font-family: 'IBM Plex Mono', monospace;
-  color: var(--site-text-color, #ffffff) !important;
-  /*font-family: 'Lacquer', sans-serif;*/
+/* ========================================
+   THEME VARIABLES - Edit colors here!
+   ======================================== */
+:root {
+  /* Primary colors */
+  --color-primary: #a855f7;        /* purple-500 */
+  --color-primary-dark: #7e22ce;   /* purple-700 */
+  --color-primary-light: #c084fc;  /* purple-400 */
   
-  background-color: #00111c;
+  /* Accent colors */
+  --color-accent: #22d3ee;         /* cyan-400 */
+  --color-accent-dark: #06b6d4;    /* cyan-500 */
+  
+  /* Background colors */
+  --color-bg-primary: #020617;     /* slate-950 */
+  --color-bg-secondary: #0f172a;   /* slate-900 */
+  --color-bg-tertiary: #1e293b;    /* slate-800 */
+  
+  /* Text colors */
+  --color-text-primary: #f9f6f1;   /* slate-100 */
+  --color-text-secondary: #cbd5e1; /* slate-300 */
+  --color-text-muted: #94a3b8;     /* slate-400 */
+  --color-name-accent: #a855f7;    /* Color for "WanG" - Change this! */
+  
+  /* Border colors */
+  --color-border: #334155;         /* slate-700 */
+  --color-border-light: #475569;   /* slate-600 */
+  
+  /* Button colors */
+  --color-btn-primary-bg: #ffffff;
+  --color-btn-primary-text: #0f172a;
+  --color-btn-primary-hover: #e2e8f0; /* slate-200 */
+  
+  /* Fonts */
+  --font-display: 'Major Mono Display', monospace;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-/* Override Tailwind text color utilities globally */
-body * {
-  color: inherit;
+/* ========================================
+   HOW TO USE THESE VARIABLES:
+   ======================================== 
+   
+   In your Astro components, use CSS variables like this:
+   
+   Inline styles:
+   <div style="color: var(--color-primary);">Text</div>
+   <div style="background: var(--color-bg-secondary);">Box</div>
+   
+   In <style> blocks:
+   .my-class {
+     color: var(--color-text-primary);
+     background: var(--color-bg-primary);
+     border-color: var(--color-border);
+   }
+   
+   To change your site's colors, just edit the values 
+   in the :root section above!
+   ======================================== */
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lacquer', sans-serif;
+/* Apply theme variables globally */
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar - using CSS variables */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Animation classes */
+.animate-on-scroll {
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.animate-on-scroll.in-view {
+  opacity: 1 !important;
+  transform: translateY(0) translateX(0) !important;
 }
