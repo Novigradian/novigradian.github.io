@@ -15,38 +15,55 @@
     </div>
 
     <!-- Content -->
-    <div class="space-y-6 text-slate-300 leading-relaxed text-lg animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000">
-      <p>
-        I'm a university student pursuing game development, driven by a passion for creating 
-        immersive interactive experiences. My journey began with a simple curiosity about 
-        how games work, and has evolved into a dedicated pursuit of mastering the craft.
-      </p>
-      
-      <p>
-        Through coursework, personal projects, and game jams, I've developed skills in 
-        programming, game design, and problem-solving. I enjoy the challenge of bringing 
-        creative ideas to life through code and seeing players engage with the worlds I create.
-      </p>
+    <div class="grid md:grid-cols-3 gap-8 items-center animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000">
+      <!-- Profile Photo -->
+      <div class="flex justify-center md:justify-start">
+        <div class="relative group">
+          <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
+          <img 
+            src="/pfp.jpg" 
+            alt="Profile Photo" 
+            class="relative w-64 h-64 object-cover rounded-lg border-2 border-slate-700 group-hover:border-slate-600 transition-colors duration-300"
+          />
+        </div>
+      </div>
 
-      <p>
-        Beyond academics, I'm actively involved in game development communities, participating 
-        in game jams, collaborating on projects, and constantly learning new techniques and 
-        technologies in this ever-evolving field.
-      </p>
+      <!-- Text Content -->
+      <div class="md:col-span-2 space-y-6 text-slate-300 leading-relaxed text-lg">
+        <p>
+          I'm an indie game developer majoring in Computer Science and Game Design 
+          at the University of Southern California. I craft immersive digital experiences
+          through compelling narratives and innovative mechanics. 
+        </p>
+        
+        <p>
+          At heart, I am a storyteller. Before I stepped foot into game dev, I was already 
+          writing novels and drawing comics. I built fictional worlds because I believed in
+          the power of stories to change the way we think, see, and connect.
+        </p>
+
+        <p>
+          As I began to play games like <i>The Witcher 3</i> and <i>Hotline Miami</i>,
+          I witnessed the interactive narrative potential of games. The stories
+          they told resonated with me more than any other medium. Since then, I
+          have dedicated myself
+          to games that not only entertain, but also emphathize.
+        </p>
+      </div>
     </div>
 
     <!-- Quick Stats -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000">
       <div class="text-center">
-        <div class="text-4xl font-bold text-slate-200 mb-2">5+</div>
+        <div class="text-4xl font-bold text-slate-200 mb-2">8</div>
         <div class="text-sm text-slate-400">Games Released</div>
       </div>
       <div class="text-center">
-        <div class="text-4xl font-bold text-slate-200 mb-2">10+</div>
+        <div class="text-4xl font-bold text-slate-200 mb-2">2</div>
         <div class="text-sm text-slate-400">Game Jams</div>
       </div>
       <div class="text-center">
-        <div class="text-4xl font-bold text-slate-200 mb-2">3+</div>
+        <div class="text-4xl font-bold text-slate-200 mb-2">4+</div>
         <div class="text-sm text-slate-400">Years Learning</div>
       </div>
       <div class="text-center">
@@ -59,7 +76,7 @@
     <div class="mt-16 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000">
       <h3 class="text-xl font-semibold text-slate-200 mb-6">Tools & Technologies</h3>
       <div class="flex flex-wrap gap-3">
-        {['Unity', 'C#', 'Unreal Engine', 'C++', 'Godot', 'Blender', 'Git', 'Photoshop'].map((tech) => (
+        {['Unity', 'C#', 'C++', 'Java', 'Python', 'HTML + CSS','SQL', 'Git'].map((tech) => (
           <span class="px-4 py-2 bg-slate-800/50 border border-slate-700 text-slate-300 rounded-md text-sm font-medium hover:border-slate-600 transition-colors">
             {tech}
           </span>

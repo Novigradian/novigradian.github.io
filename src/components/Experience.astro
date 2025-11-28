@@ -1,63 +1,82 @@
 ---
 const experiences = [
   {
-    role: "Game Developer",
-    organization: "University Game Dev Club",
-    period: "2023 - Present",
+    role: "Open Alpha USC",
+    organization: "Programming Lead",
+    period: "Sept 2025 - Present",
     type: "Extracurricular",
-    description: "Leading team projects, organizing game jams, and mentoring new members in game development fundamentals.",
+    description: "Managed programming team at USC's largest game development club.",
     highlights: [
-      "Organized 3 successful game jams with 50+ participants",
-      "Led development of 2 collaborative game projects",
-      "Conducted workshops on Unity and game design principles"
+      "Oversaw team of 20 programmers",
+      "Mentored novice members",
+      "Hosted weekly meetings and aligned progress with other club teams",
+      "Produced Neuromancer, dialogue-based game published on itch.io"
     ]
   },
   {
-    role: "Programming Team Member",
-    organization: "University Robotics Club",
-    period: "2023 - Present",
+    role: "SHSID Game Development Club",
+    organization: "Club Leader",
+    period: "Sept 2022 - Feb 2025",
     type: "Extracurricular",
-    description: "Developing control systems and UI for autonomous robots, applying game programming skills to real-world applications.",
+    description: "Headed my high school game development club, organizing events and producing games.",
     highlights: [
-      "Programmed robot navigation systems in C++",
-      "Created visualization tools for robot sensors",
-      "Competed in regional robotics competitions"
+      "Led 30+ club members to produce & publish 2 games",
+      "Collaborate with 2 other game development clubs based in Honolulu and Taipei",
+      "Create & share teaching resources for novice programmers",
+      "Organized weekly tabletop game design activities & online development meetings",
+      "Manage club social media across various platforms"
     ]
   },
   {
-    role: "Teaching Assistant",
-    organization: "Introduction to Programming Course",
-    period: "Fall 2024",
-    type: "Academic",
-    description: "Assisted students with programming fundamentals, held office hours, and graded assignments.",
-    highlights: [
-      "Helped 30+ students improve their coding skills",
-      "Created supplementary learning materials",
-      "Received positive feedback from students and faculty"
-    ]
-  },
-  {
-    role: "Game Jam Participant",
-    organization: "Ludum Dare / Global Game Jam",
-    period: "2022 - Present",
+    role: "Educational Game Project",
+    organization: "Project Lead, Programmer",
+    period: "Feb - May 2024",
     type: "Community",
-    description: "Regular participant in game jams, creating complete games under tight time constraints.",
+    description: "Led team of tutors at local Primary School to create educational games",
     highlights: [
-      "Completed 8+ game jam entries",
-      "Won 'Best Gameplay' award at university game jam",
-      "Built portfolio of experimental game mechanics"
+      "Programmed & designed 'Ecotropolis', a puzzle game that taught concepts of urban planning and pollution, published on itch.io",
+      "Designed 'Pun Intended', a tabletop game that improves student's English reading & converstion skills",
+      "Designed 'Pitching Pianos', a game teaching concepts of pitch",
+      "Playtested & distributed game at Shanghui Primary School, collected feedback"
     ]
   },
   {
-    role: "Freelance Game Developer",
-    organization: "Independent",
-    period: "Summer 2024",
-    type: "Work",
-    description: "Created educational mini-games for a local education startup.",
+    role: "11th Official Brackeys Game Jam",
+    organization: "Participant, Programmer, Level Design",
+    period: "Feb 2024",
+    type: "Game Jam",
+    description: "Collaborated with friends from NHSGA to create a game within 7 days.",
     highlights: [
-      "Developed 3 educational games in Unity",
-      "Worked directly with clients on game design",
-      "Managed project timeline and deliverables"
+      "Created 'Headless Hotel', a survival horror game", 
+      "Built player controls, inventory system & game map", 
+      "Published on itch.io",
+      "Ranked #157 out of 792 teams (top 20%)"
+    ]
+  },
+  {
+    role: "National High School Game Academy",
+    organization: "Student, Game Producer",
+    period: "Jun - Aug 2023",
+    type: "Academic",
+    description: "Summer program at Carnegie Mellon University. Learned fundamental skill in game production & team management.",
+    highlights: [
+      "Producer & programmer for 'Vendetta', led a 5-person team",
+      "Programmer for 'Tempest', a quick arcade game made within 1 week",
+      "Learned basics of 3D box modeling and UV mapping in Maya; 3D texturing in Adobe Substance Painter; photo editing with Adobe Photoshop; storyboarding and character design",
+      "Learned advanced skills in programming in Unity game engine",
+      "Rapidly produced & iterated paper prototypes",
+
+    ]
+  },
+  {
+    role: "GMTK Game Jam",
+    organization: "Participant, Programmer",
+    period: "July 2023",
+    type: "Game Jam",
+    description: "Created game with NHSGA roomates within 48 hours",
+    highlights: [
+      "Published game 'Sir Finn Dolphin' on itch.io",
+      "Created player controls & game SFX",
     ]
   }
 ];
@@ -66,7 +85,8 @@ const typeColors = {
   "Extracurricular": "text-purple-400 border-purple-500/30 bg-purple-500/10",
   "Academic": "text-blue-400 border-blue-500/30 bg-blue-500/10",
   "Community": "text-cyan-400 border-cyan-500/30 bg-cyan-500/10",
-  "Work": "text-green-400 border-green-500/30 bg-green-500/10"
+  "Work": "text-green-400 border-green-500/30 bg-green-500/10",
+  "Game Jam": "text-orange-400 border-orange-500/30 bg-orange-500/10"
 };
 ---
 
@@ -134,7 +154,7 @@ const typeColors = {
     <!-- Download Resume CTA -->
     <div class="text-center mt-12 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000">
       <a 
-        href="/resume.pdf" 
+        href="/public/docs/LucasWang_Resume.pdf" 
         download
         class="inline-flex items-center gap-2 px-6 py-2.5 text-slate-300 rounded-md font-medium border border-slate-700 hover:border-slate-500 hover:text-white transition-all duration-300"
       >
@@ -143,6 +163,121 @@ const typeColors = {
         </svg>
         Download Resume
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- Education Section -->
+<section id="education" class="py-24 relative bg-slate-950/50">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="mb-16 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="h-px w-8 bg-slate-700"></span>
+        <span class="text-slate-500 text-sm font-medium tracking-wider uppercase" style="font-family: var(--font-display);">Education</span>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">
+        <span class="text-slate-200">Academic Background</span>
+      </h2>
+      <p class="text-slate-400 text-lg">
+        My educational journey and academic achievements
+      </p>
+    </div>
+
+    <!-- Education Timeline -->
+    <div class="space-y-8">
+      <div 
+        class="relative pl-8 md:pl-12 border-l-2 border-slate-800 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000"
+      >
+        {/* Timeline dot */}
+        <div class="absolute left-0 top-0 -translate-x-[9px] w-4 h-4 rounded-full bg-slate-700 border-4 border-slate-950"></div>
+
+        {/* Content */}
+        <div class="bg-slate-900/50 border border-slate-800 rounded-lg p-6 hover:border-slate-700 transition-colors">
+          <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+            <div>
+              <h3 class="text-xl font-bold text-slate-100 mb-1">University of Southern California</h3>
+              <p class="text-slate-400">Bachelor of Science in Computer Science (Games)</p>
+            </div>
+            <div class="flex flex-col items-end gap-2">
+              <span class="text-sm text-slate-500 font-medium">2025 - 2029</span>
+              <span class="text-xs px-2.5 py-1 rounded-full border font-medium text-amber-400 border-amber-500/30 bg-amber-500/10">
+                In Progress
+              </span>
+            </div>
+          </div>
+
+          <p class="text-slate-300 mb-4 leading-relaxed">
+            Pursuing a degree in computer science with a focus in game development and design.
+          </p>
+
+          {/* Highlights */}
+          <div class="space-y-2">
+            <div class="flex items-start gap-2 text-sm text-slate-400">
+              <svg class="w-4 h-4 mt-0.5 text-slate-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+              <span>GPA: In Progress</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-400">
+              <svg class="w-4 h-4 mt-0.5 text-slate-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+              <span>Relevant Coursework: Game Design, OOP with C++, Discrete Methods in Computer Science</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div 
+        class="relative pl-8 md:pl-12 border-l-2 border-slate-800 animate-on-scroll opacity-0 translate-y-8 transition-all duration-1000"
+        style="transition-delay: 100ms"
+      >
+        {/* Timeline dot */}
+        <div class="absolute left-0 top-0 -translate-x-[9px] w-4 h-4 rounded-full bg-slate-700 border-4 border-slate-950"></div>
+
+        {/* Content */}
+        <div class="bg-slate-900/50 border border-slate-800 rounded-lg p-6 hover:border-slate-700 transition-colors">
+          <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+            <div>
+              <h3 class="text-xl font-bold text-slate-100 mb-1">Shanghai High School International Division</h3>
+              <p class="text-slate-400">International Baccalaureate Diploma Programme</p>
+            </div>
+            <div class="flex flex-col items-end gap-2">
+              <span class="text-sm text-slate-500 font-medium">2021 - 2025</span>
+              <span class="text-xs px-2.5 py-1 rounded-full border font-medium text-green-400 border-green-500/30 bg-green-500/10">
+                Completed
+              </span>
+            </div>
+          </div>
+
+          <p class="text-slate-300 mb-4 leading-relaxed">
+            Graduated with honors, IB score 42/45.
+          </p>
+
+          {/* Highlights */}
+          <div class="space-y-2">
+            <div class="flex items-start gap-2 text-sm text-slate-400">
+              <svg class="w-4 h-4 mt-0.5 text-slate-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+              <span>Honor Roll</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-400">
+              <svg class="w-4 h-4 mt-0.5 text-slate-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+              <span>AP Computer Science A - Score: 5</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-400">
+              <svg class="w-4 h-4 mt-0.5 text-slate-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+              <span>Founded Game Development Club</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

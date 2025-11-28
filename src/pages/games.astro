@@ -1,0 +1,271 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+export interface Game {
+  title: string;
+  description: string;
+  image: string;
+  video?: string;
+  tags: string[];
+  teamSize: number;
+  duration: string;
+  steam?: string;
+  itch?: string;
+  youtube?: string;
+  demo?: string;
+  year: string;
+  badge?: string;
+}
+
+const games: Game[] = [
+{
+    title: "Red Tide",
+    description: "Manage a postapocalyptic oceanic settlement in this strategic roguelike tower defense. Guide your people in an endless struggle for survival and faith.",
+    image: "/games/game2.jpg",
+    video: "/gameplay/red_tide.mp4",
+    tags: ["Solo Dev", "2D", "Devlog"],
+    teamSize: 1,
+    duration: "Ongoing",
+    youtube: "https://www.youtube.com/watch?v=ntgj9z5DBSE&t=246s",
+    year: "2024",
+    badge: "In Development",
+  },  
+{
+    title: "Overdawn",
+    description: "A bullet hell shooter set in the dystopian city of Andrean. As a blood-thirsty merc, hunt down your enemies and defy against your destiny.",
+    image: "/games/game1.jpg",
+    video: "/gameplay/overdawn2.mp4",
+    tags: ["Engineer", "Unity", "C#", "2.5D", "Steam"],
+    teamSize: 20,
+    duration: "3 months",
+    steam: "https://store.steampowered.com/app/3519070/Overdawn/",
+    year: "2025",
+    badge: "Demo Release",
+  },
+  
+  {
+    title: "Headless Hotel",
+    description: "Waking up in a hotel of horrors, you have only one job: to escape the hotel alive. Made for the Brackey's 2024 Game Jam.",
+    image: "/games/game3.jpg",
+    video: "/gameplay/headless_hotel.mp4",
+    tags: ["Engineer", "Level Design", "Game Jam", "Unity", "C#", "2D"],
+    teamSize: 8,
+    duration: "1 week",
+    itch: "https://henry-hamster.itch.io/headless-hotel",
+    year: "2024",
+  },
+  {
+    title: "Ecotropolis",
+    description: "Chill educational puzzle game about building sustainable cities. Distributed to students at Shanghui Primary School.",
+    image: "/games/game4.jpg",
+    video: "/gameplay/ecotropolis.mp4",
+    tags: ["Producer", "Lead Engineer", "Level Design", "Unity", "C#", "3D"],
+    teamSize: 2,
+    duration: "2 weeks",
+    itch: "https://novigradian7.itch.io/ecotropolis",
+    year: "2024",
+  },
+  {
+    title: "Vroom Brooms",
+    description: "A local multiplayer racing game. Grab a broom and race to the finish line!",
+    image: "/games/game4.jpg",
+    video: "/gameplay/vroombrooms.mp4",
+    tags: ["Producer", "Lead Engineer", "Unity", "C#", "2D"],
+    teamSize: 12,
+    duration: "3 months",
+    itch: "https://novigradian7.itch.io/vroom-brooms",
+    year: "2023",
+  },
+  {
+    title: "Vendetta",
+    description: "Swordfighting game set in Renaissance Italy with a grueling difficulty. Final project for Carnegie Mellon University's NHSGA Summer Program.",
+    image: "/games/game4.jpg",
+    video: "/gameplay/vendetta.mp4",
+    tags: ["Producer", "Lead Engineer", "Narrative", "Combat Design", "Unity", "C#", "2D"],
+    teamSize: 5,
+    duration: "3 weeks",
+    itch: "https://novigradian7.itch.io/vendetta",
+    year: "2023",
+  },
+  {
+    title: "GlitchWave",
+    description: "Remake of the classic arcade game Tempest. Play as a programmer who must \"debug\" your code (by literally killing the bugs) or risk bringing utter annihilation to your computer",
+    image: "/games/game4.jpg",
+    video: "/gameplay/glitchwave.mp4",
+    tags: ["Engineer", "Unity", "C#", "3D"],
+    teamSize: 5,
+    duration: "1 week",
+    itch: "https://novigradian7.itch.io/glitchwave",
+    year: "2023",
+  },
+  {
+    title: "Sir Finn Dolphin",
+    description: "Swordfighting game set in Renaissance Italy with a grueling difficulty. Final project for Carnegie Mellon University's NHSGA Summer Program.",
+    image: "/games/game4.jpg",
+    video: "/gameplay/vendetta.mp4",
+    tags: ["Producer", "Lead Engineer", "Narrative", "Combat Design", "Unity", "C#", "2D"],
+    teamSize: 4,
+    duration: "48 hours",
+    itch: "https://novigradian7.itch.io/vendetta",
+    year: "2023",
+  },
+];
+---
+
+<BaseLayout title="All Games | Lucas Wang" description="Browse all games developed by Lucas Wang">
+  <Navbar />
+  <main class="min-h-screen pt-24 pb-16">
+    <section class="py-16 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Page Header -->
+        <div class="mb-16 text-center">
+          <div class="flex items-center justify-center gap-3 mb-4">
+            <span class="h-px w-8 bg-slate-700"></span>
+            <span class="text-slate-500 text-sm font-medium tracking-wider uppercase" style="font-family: var(--font-display);">Portfolio</span>
+            <span class="h-px w-8 bg-slate-700"></span>
+          </div>
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            <span class="text-slate-200">All Games</span>
+          </h1>
+          <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+            A collection of all my game development projects
+          </p>
+        </div>
+
+        <!-- Games Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {games.map((game) => (
+            <div class="group relative bg-slate-900/50 border border-slate-800 rounded-lg overflow-hidden hover:border-slate-700 transition-all duration-300">
+              {/* Badge */}
+              {game.badge && (
+                <div class="absolute top-4 right-4 z-10">
+                  <span class="px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/20 text-slate-200 text-xs font-medium rounded-full">
+                    {game.badge}
+                  </span>
+                </div>
+              )}
+
+              {/* Game Image/Video */}
+              <div class="relative aspect-video overflow-hidden bg-slate-800">
+                {game.video ? (
+                  <video
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                    class="w-full h-full object-cover"
+                  >
+                    <source src={game.video} type="video/mp4" />
+                  </video>
+                ) : (
+                  <img 
+                    src={game.image} 
+                    alt={game.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                )}
+                
+                {/* Hover overlay with links */}
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                  {game.steam && (
+                    <a 
+                      href={game.steam} 
+                      target="_blank" 
+                      rel="noopener"
+                      class="p-3 bg-slate-800/90 hover:bg-slate-700 rounded-lg transition-colors backdrop-blur-sm"
+                      title="View on Steam"
+                    >
+                      <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"/>
+                      </svg>
+                    </a>
+                  )}
+                  {game.itch && (
+                    <a 
+                      href={game.itch} 
+                      target="_blank" 
+                      rel="noopener"
+                      class="p-3 bg-slate-800/90 hover:bg-slate-700 rounded-lg transition-colors backdrop-blur-sm"
+                      title="View on itch.io"
+                    >
+                      <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3.13 1.338C2.08 1.96.02 4.328 0 4.95v1.03c0 1.303 1.22 2.45 2.325 2.45 1.33 0 2.436-1.102 2.436-2.41 0 1.308 1.07 2.41 2.4 2.41 1.328 0 2.362-1.102 2.362-2.41 0 1.308 1.137 2.41 2.466 2.41h.024c1.33 0 2.466-1.102 2.466-2.41 0 1.308 1.034 2.41 2.363 2.41 1.33 0 2.4-1.102 2.4-2.41 0 1.308 1.106 2.41 2.435 2.41C22.78 8.43 24 7.283 24 5.98V4.95c-.02-.62-2.082-2.99-3.13-3.612-3.253-.114-5.508-.134-8.87-.133-3.362 0-7.945.053-8.87.133zm6.376 6.477a2.74 2.74 0 0 1 2.74 2.74v6.525c0 .287.157.55.387.688.23.138.51.126.73-.03l2.35-1.645c.23-.16.53-.167.78-.02l2.445 1.665c.22.156.5.168.73.03.23-.138.387-.4.387-.688v-6.525a2.74 2.74 0 0 1 2.74-2.74h.02a2.74 2.74 0 0 1 2.74 2.74v6.525c0 1.01-.55 1.94-1.41 2.42-.86.48-1.92.45-2.76-.08l-2.44-1.665-2.35 1.645c-.84.53-1.9.56-2.76.08-.86-.48-1.41-1.41-1.41-2.42v-6.525a2.74 2.74 0 0 1 2.74-2.74z"/>
+                      </svg>
+                    </a>
+                  )}
+                  {game.youtube && (
+                    <a 
+                      href={game.youtube} 
+                      target="_blank" 
+                      rel="noopener"
+                      class="p-3 bg-slate-800/90 hover:bg-slate-700 rounded-lg transition-colors backdrop-blur-sm"
+                      title="Watch on YouTube"
+                    >
+                      <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                      </svg>
+                    </a>
+                  )}
+                </div>
+              </div>
+
+              {/* Game Info */}
+              <div class="p-5">
+                <div class="flex items-center justify-between mb-2">
+                  <h3 class="text-xl font-bold text-slate-100">
+                    {game.title}
+                  </h3>
+                  <span class="text-slate-500 text-sm">{game.year}</span>
+                </div>
+                
+                <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                  {game.description}
+                </p>
+                
+                <div class="flex items-center gap-4 mb-3">
+                  <div class="flex items-center gap-1.5">
+                    <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                    <span class="text-xs font-medium text-slate-300">{game.teamSize}</span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-xs font-medium text-slate-300">{game.duration}</span>
+                  </div>
+                </div>
+
+                {/* Tags */}
+                <div class="flex flex-wrap gap-2">
+                  {game.tags.map((tag) => (
+                    <span class="px-2.5 py-1 text-xs font-medium bg-slate-800 text-slate-300 rounded border border-slate-700">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Back to Home Button */}
+        <div class="text-center mt-12">
+          <a 
+            href="/#games" 
+            class="inline-flex items-center gap-2 px-6 py-2.5 text-slate-300 rounded-md font-medium border border-slate-700 hover:border-slate-500 hover:text-white transition-all duration-300"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+            </svg>
+            Back to Home
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
